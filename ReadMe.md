@@ -1,6 +1,9 @@
 # Thanks [@Trabe](https://github.com/trabe)!
 It all started with [this](https://medium.com/trabe/monorepo-setup-with-lerna-and-yarn-workspaces-5d747d7c0e91) article
 
+Some updates have been made to bring it inline with DownQuark's build and develop process.
+Resulting in the final file structure resembling this:
+```
 ├── node_modules
 │
 ├── lerna.json
@@ -34,6 +37,7 @@ It all started with [this](https://medium.com/trabe/monorepo-setup-with-lerna-an
     ├── dq-module2
     │   └── ...
     ├── ...
+```
 
 ---
 Yarn handles the dependencies.
