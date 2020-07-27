@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# The task script does two things:
+# Defines the set of common tasks: clean, compile, test and lint. 
+  # Each task uses the required tool forcing it to use the current package’s folder config files. 
+  # It also fixes the base dir if needed (for example, jest needs this).
+#
+# Allows execution of any node_modules binary, in case the common tasks are not enough. 
+  # For example a custom compilation command could be: ./task babel -d ./lib2 ./src2.
+
+CMD=$1
+shift
+
+exe() { echo "$@" ; $@ ; }
+
+case $CMD in
+  clean)
+    exe "rm -fr ./lib"
+    ;;
+    
+  compile)
+    exe "../../node_modules/.bin/babel --config-file $(pwd)/babel.config.js --verbose -d ./lib ./src"
+    ;;
+
+  modlib)
+    exe "../../node_modules/.bin/babel --config-file $(pwd)/babel.config.js --verbose -d"
+    ;;
+
+  tap)
+    if [ -d "./spec" ]; then
+      exe "../../node_modules/.bin/tap --strict"
+    else
+      echo "No tests to run"
+    fi
+    ;;
+
+  test)
+    if [ -d "./spec" ]; then
+      exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ."
+    else
+      echo "No tests to run"
+    fi
+    ;;
+    
+  lint)
+    exe "../../node_modules/.bin/eslint ./src ./test -c $(pwd)/eslint.config.js --report-unused-disable-directives"
+    ;;
+    
+  *)
+    if [[ -z "$CMD" ]]; then
+      echo "USAGE: ./task (clean|compile|test|lint|<node_modules_bin_command>) command_args"
+      exit 0
+    fi
+    exe "../../node_modules/.bin/$CMD $@"
+    ;;
+esac

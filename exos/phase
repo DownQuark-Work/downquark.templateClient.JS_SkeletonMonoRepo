@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# TODO: simple scripts to allow module manipulations.
+
+
+# ./phase '!' <name>[a-zA-Z0-9] <type>[ENUM<supported frameworks>] 
+  # !ERROR!! if !name || !name.length
+  # creates a new mono-repo structure of specified framework in the current directory
+# ./phase [i,in] <name>[a-zA-Z0-9]
+  # !ERROR!! if !name || !name.length
+    # creates a new directory with default `skeleton` files and symlink within the given package name's directory
+    # adds new projet to `_mono-connector/package.json`
+# ./phase [c,clone] <original>[ENUM<current modules>] <name>[a-zA-Z0-9]
+  # !ERROR!! if !name || !name.length
+    # copies all directories and files from selected ENUM to new directory with given package name
+    # adds new projet to `_mono-connector/package.json`
+# ./phase [o,out] <original>[ENUM<current modules>] 
+  # !ERROR!! N/A {original is ENUM and should always have a valid value}
+  # recursively removes specified dir
+  # removes from `_mono-connector/package.json`
+  # removes from any other modules within the monorepo that were using it
+# ./phase 'CRUNCH' <name>[a-zA-Z0-9] <confirm>[boolean] 
+  # !ERROR!! if name !== monorepo.name
+  # deletes all files associated with project
+
+# Make sure that each module (if applicable) can:
+  # Has its own Error Boundry
+  # Can return components/data/etc both up and down the react tree

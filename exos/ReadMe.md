@@ -1,0 +1,1 @@
+Objects outside of the system that can cause effects within 

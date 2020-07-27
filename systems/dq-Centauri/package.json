@@ -1,0 +1,16 @@
+{
+  "name": "@downquark/template~monorepo-module_centauri",
+  "version": "1.0.0-0",
+  "description": "Centauri Skeleton",
+  "files": [
+    "lib/modules/centauri"
+  ],
+  "main": "lib/modules/centauri/index.js",
+  "scripts": {
+    "clean": "./exos clean",
+    "compile": "./exos modlib ./lib/modules/centauri ./src",
+    "test": "./exos tap --save=spec/coverage.txt",
+    "lint": "./exos lint"
+  },
+  "dependencies": {}
+}

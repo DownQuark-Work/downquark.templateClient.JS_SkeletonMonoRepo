@@ -1,0 +1,24 @@
+.DS*
+
+# Compiled
+src/assets/styles/css
+exports/.cache/**/
+exports/_deploy/**/
+exports/logs/**/
+validators/flow/flow-typed/stubs/
+
+# Logs
+*.log*
+
+# Modules
+node_modules/
+
+# Optional cache directories
+.eslintcache
+.npm
+
+# Optional private notes directory
+_notes/.ignored/
+
+# Yarn Integrity file
+.yarn-integrity

@@ -1,0 +1,1 @@
+const baseConfig = require('../../_universals/globals/configs/eslint.config.js');
