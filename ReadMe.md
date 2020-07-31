@@ -51,6 +51,7 @@ All packages share the same structure.
 Each package defines only its runtime dependencies.
 
 All the tooling and devDependencies are shared and live in its own package.
+Notice that we will never define a devDependency to this package. We are abusing the workspaces here. Yarn will expand this packages’ dependencies in the root node_modules where other packages and tasks can find them.
 
 Each package contains the required configuration files for the tooling. Each file extends a common base configuration (we use Babel, any multitude of testing languages and ESlint to compile, test and lint the code).
 
