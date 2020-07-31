@@ -41,19 +41,32 @@ Resulting in the final file structure resembling this:
 
 ---
 Yarn handles the dependencies.
+
 Lerna handles tasks that affect multiple packages (compile/test/lint all modules).
+
 One folder per package inside systems.
+
 All packages share the same structure.
+
 Each package defines only its runtime dependencies.
+
 All the tooling and devDependencies are shared and live in its own package.
+
 Each package contains the required configuration files for the tooling. Each file extends a common base configuration (we use Babel, any multitude of testing languages and ESlint to compile, test and lint the code).
+
 Each package symlinks a common task script that defines how the different tools must be invoked.
+
 There is a “hub” package (_universals/singularity). It depends on all the other packages and allows easy usage of the framework (a single dependency).
+
 Publication is handled by a custom publish script that will be used by the CI environment.
 
 ---
 We setup the workspaces using the workspaces entry in package.json.
+
 We define tasks to clean/compile/test/lint all packages using Lerna.
+
 To update the version number we use the lerna publish command. In our scenario we do not allow Lerna to add commits or tags to the repo. We also avoid package publication.
+
 There is a check-packages task that will be used in the CI environment.
+
 There is also a publish-packages task for the CI. We will detect version number changes and publish the packages if needed.
