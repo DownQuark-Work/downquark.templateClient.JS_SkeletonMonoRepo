@@ -1,1 +1,1 @@
-const baseConfig = require('../../_universals/globals/configs/jest.config.js')
+const baseConfig = require('../../dq_universals/globals/configs/jest.config.js')

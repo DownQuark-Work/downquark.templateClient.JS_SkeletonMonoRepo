@@ -1,0 +1,12 @@
+{
+  "name": "@downquark/template_monorepo-singularity",
+  "version": "1.0.0-0",
+  "description": "A single file pulling in all surrounding modules.",
+  "scripts": {
+    "test": "./exos test"
+  },
+  "dependencies": {
+    "@downquark/template_monorepo_module-alpha": "1.0.0-0", 
+    "@downquark/template_monorepo_module-centauri": "1.0.0-0"
+  }
+}

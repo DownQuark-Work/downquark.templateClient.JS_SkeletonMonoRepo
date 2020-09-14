@@ -1,1 +1,1 @@
-const baseConfig = require('../../_universals/globals/configs/eslint.config.js');
+const baseConfig = require('../../dq_universals/globals/configs/eslint.config.js');

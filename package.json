@@ -1,15 +1,23 @@
 {
   "private": true,
   "workspaces": [
-    "systems/*"
+    "systems/*",
+    "systems/dq_universals/*"
   ],
   "scripts": {
+    "lb": "lerna bootstrap",
+    "lc": "lerna changed",
+    "ld": "lerna diff",
+    "lls": "lerna ls",
+    "lr": "lerna run",
+    "limp": "lerna import",
     "compile": "lerna run compile",
     "clean": "lerna run clean",
     "lint": "lerna run lint",
     "test": "lerna run test",
     "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
     "check-packages": "yarn clean && yarn compile && yarn test && yarn lint",
+    "prepublish-packages": "lerna bootstrap",
     "publish-packages": "./exos/publish"
   },
   "devDependencies": {

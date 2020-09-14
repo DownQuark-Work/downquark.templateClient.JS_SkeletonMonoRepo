@@ -1,5 +1,5 @@
 {
-  "name": "@downquark/template~monorepo-module_centauri",
+  "name": "@downquark/template_monorepo_module-centauri",
   "version": "1.0.0-0",
   "description": "Centauri Skeleton",
   "files": [
@@ -12,5 +12,7 @@
     "test": "./exos tap --save=spec/coverage.txt",
     "lint": "./exos lint"
   },
-  "dependencies": {}
+  "dependencies": {
+    "qonsole": "^1.0.9"
+  }
 }

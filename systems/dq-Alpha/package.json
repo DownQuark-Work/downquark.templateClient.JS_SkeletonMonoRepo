@@ -1,5 +1,5 @@
 {
-  "name": "@downquark/template~monorepo-module_alpha",
+  "name": "@downquark/template_monorepo_module-alpha",
   "version": "1.0.0-0",
   "description": "Alpha Skeleton",
   "files": [
@@ -13,6 +13,6 @@
     "lint": "./exos lint"
   },
   "dependencies": {
-    "@downquark/template~monorepo-module_centauri": "1.0.0-0"
+    "@downquark/template_monorepo_module-centauri": "1.0.0-0"
   }
 }
