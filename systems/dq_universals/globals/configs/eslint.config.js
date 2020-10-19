@@ -1,4 +1,3 @@
-// module.exports = require('cross-deps/eslint.config.js');
 module.exports = {
   "env": {
     "browser": true,
