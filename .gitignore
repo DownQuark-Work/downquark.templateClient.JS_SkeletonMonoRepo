@@ -20,5 +20,11 @@ node_modules/
 # Optional private notes directory
 _notes/.ignored/
 
-# Yarn Integrity file
-.yarn-integrity
+# Yarn
+.yarn/*
+!.yarn/cache # uncomment for Zero-Installs
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+# .pnp.* # uncomment for non-Zero-Installs
